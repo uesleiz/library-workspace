@@ -1,0 +1,36 @@
+.doughnut__legend {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.legend__item {
+    border-bottom-style: solid;
+    border-bottom-color: #F2F2F2;
+    border-bottom-width: 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 32px;
+    gap: 10px;
+
+    font-family: 'Inter', 'Sans-serif';
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14.52px;
+    text-align: left;
+    color: #686868
+}
+
+.legend__desc {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.legend__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 10px;
+    display: block;
+}

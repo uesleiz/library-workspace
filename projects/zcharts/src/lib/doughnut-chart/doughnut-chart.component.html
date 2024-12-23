@@ -1,3 +1,16 @@
 <div [style]="size">
     <zc-base-chart [options]="options"></zc-base-chart>
+    <div>
+        <ul class="doughnut__legend">
+            @for(item of this.data(); track item.name){
+            <li class="legend__item">
+                <span class="legend__desc">
+                    <span class="legend__dot" [style.background]="item.itemStyle?.color || '#ccc'"></span>
+                    <span class="legend__name">{{item.name}}</span>
+                </span>
+                <span class="legend__value">{{item.value}}</span>
+            </li>
+            }
+        </ul>
+    </div>
 </div>

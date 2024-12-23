@@ -28,29 +28,29 @@ export class DoughnutChartComponent {
       legend: {
         orient: 'horizontal',
         show: this.hasLegend(),
-        bottom: '0%',
-        left: 'left',
-        formatter: (name) => {
-          const seriesData = this.data().find(item => item.name === name);
-          const value = seriesData?.value ?? 0;
-          return `{nameStyle|${name}} {valueStyle|${value}}`;
-        },
-        textStyle: {
-          fontSize: 14,
-          color: '#000',
-          rich: {
-            nameStyle: {
-              color: '#000',
-              fontWeight: 'bold',
-              width: 100,
-              align: 'left',
-            },
-            valueStyle: {
-              color: '#666',
-              align: 'right',
-            },
-          },
-        },
+        top: '5%',
+        left: 'center',
+        // formatter: (name) => {
+        //   const seriesData = this.data().find(item => item.name === name);
+        //   const value = seriesData?.value ?? 0;
+        //   return `{nameStyle|${name}} {valueStyle|${value}}`;
+        // },
+        // textStyle: {
+        //   fontSize: 14,
+        //   color: '#000',
+        //   rich: {
+        //     nameStyle: {
+        //       color: '#000',
+        //       fontWeight: 'bold',
+        //       width: 100,
+        //       align: 'left',
+        //     },
+        //     valueStyle: {
+        //       color: '#666',
+        //       align: 'right',
+        //     },
+        //   },
+        // },
       },
       series: [
         {
