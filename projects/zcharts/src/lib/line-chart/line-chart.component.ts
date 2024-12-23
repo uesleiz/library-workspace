@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { BaseChartComponent } from '../base-chart/base-chart.component';
 import { EChartsOption } from 'echarts';
 
@@ -12,9 +12,15 @@ import { EChartsOption } from 'echarts';
   styleUrl: './line-chart.component.css'
 })
 export class LineChartComponent {
+  labels = input<number[]>([]);
+  series = input<number[]>([]);
+
   options: EChartsOption = {
-    xAxis: { type: 'category', data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] },
+    xAxis: { type: 'category', data: this.labels() },
     yAxis: { type: 'value' },
-    series: [{ data: [150, 230, 224, 218, 135, 147, 260], type: 'line' }],
+    series: [{ data: this.series(), type: 'line' }],
   };
+
 }
+
+
