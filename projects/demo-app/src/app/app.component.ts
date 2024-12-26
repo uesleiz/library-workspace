@@ -13,11 +13,7 @@ import { DoughnutChartComponent } from '../../../zcharts/src/lib/doughnut-chart/
 export class AppComponent {
   title = 'demo-app';
   customData = [
-    { value: 1048, name: 'Search Engine', itemStyle: { color: 'red' } },
-    { value: 735, name: 'Direct', itemStyle: { color: 'red' } },
-    { value: 580, name: 'Email', itemStyle: { color: 'red' } },
-    { value: 484, name: 'Union Ads', itemStyle: { color: 'red' } },
-    { value: 300, name: 'Video Ads', itemStyle: { color: 'red' } }
+    { value: 1048, name: 'Em uso', itemStyle: { color: 'red' } },
+    { value: 2500, name: 'total', itemStyle: { color: 'grey' } },
   ]
-
 }

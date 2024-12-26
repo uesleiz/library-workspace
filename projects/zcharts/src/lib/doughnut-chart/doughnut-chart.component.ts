@@ -19,6 +19,10 @@ export class DoughnutChartComponent {
   options!: EChartsOption;
   width = input<number>(30);
   height = input<number>(100);
+  hasTotal = input<boolean>(true)
+  totalCountStyle = input<string | Partial<CSSStyleDeclaration>>();
+  totalLabelStyle = input<string | Partial<CSSStyleDeclaration>>();
+
 
   ngOnInit() {
     this.options = {
@@ -27,30 +31,9 @@ export class DoughnutChartComponent {
       },
       legend: {
         orient: 'horizontal',
-        show: this.hasLegend(),
+        show: false,
         top: '5%',
         left: 'center',
-        // formatter: (name) => {
-        //   const seriesData = this.data().find(item => item.name === name);
-        //   const value = seriesData?.value ?? 0;
-        //   return `{nameStyle|${name}} {valueStyle|${value}}`;
-        // },
-        // textStyle: {
-        //   fontSize: 14,
-        //   color: '#000',
-        //   rich: {
-        //     nameStyle: {
-        //       color: '#000',
-        //       fontWeight: 'bold',
-        //       width: 100,
-        //       align: 'left',
-        //     },
-        //     valueStyle: {
-        //       color: '#666',
-        //       align: 'right',
-        //     },
-        //   },
-        // },
       },
       series: [
         {
@@ -84,6 +67,16 @@ export class DoughnutChartComponent {
       width: `${this.width()}%`,
       height: `${this.height()}px`
     }
+  }
+
+  get total() {
+    let total = 0;
+    for (let i = 0; i < this.data().length; i++) {
+      if (this.data()[i]?.value) {
+        total += this.data()[i].value;
+      }
+    }
+    return total;
   }
 
 
