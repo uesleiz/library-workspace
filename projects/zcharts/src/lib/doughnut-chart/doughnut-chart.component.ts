@@ -47,7 +47,7 @@ export class DoughnutChartComponent {
           },
           emphasis: {
             label: {
-              show: true,
+              show: false,
               fontSize: 14,
               fontWeight: 'bold'
             }
